@@ -1,11 +1,16 @@
 import React from 'react'
-
+import Hero from '../components/Hero'
+import HomeCards from '../components/HomeCards'
+import JobListings from '../components/JobListings'
+import ViewAllJobs from '../components/ViewAllJobs'
 const HomePage = () => {
   return (
-    <div className="home-page">
-      <h1>Welcome to the Home Page!</h1>
-      <p>This is a simple home page component.</p>
-    </div>
+    <>
+  <Hero />
+  <HomeCards />
+  <JobListings />
+  <ViewAllJobs />
+  </>
   )
 }
 
