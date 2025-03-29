@@ -1,5 +1,7 @@
 import React from 'react'
-import { useParams, useLoaderData } from 'react-router-dom'
+import { useParams, useLoaderData } from 'react-router-dom';
+import { FaArrowLeft } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const JobPage = () => {
     const { id } = useParams()
@@ -7,13 +9,13 @@ const JobPage = () => {
   return (
     <>
       <section>
-      <div className="container m-auto py-6 px-6">
-        <a
-          href="/jobs.html"
+      <div className="container m-auto py-6 px-6"> 
+        <Link
+          to="/jobs"
           className="text-indigo-500 hover:text-indigo-600 flex items-center"
         >
-          <i className="fas fa-arrow-left mr-2"></i> Back to Job Listings
-        </a>
+         <FaArrowLeft  className='mr-2'/>  Back to Job Listings
+        </Link>
       </div>
     </section>
 
@@ -33,7 +35,7 @@ const JobPage = () => {
             <div className="bg-white p-6 rounded-lg shadow-md mt-6">
               <h3 className="text-indigo-800 text-lg font-bold mb-6">Job Description</h3>
               <p className="mb-4">
-                We are seeking a talented Front-End Developer to join our team in Boston, MA. The ideal candidate will have strong skills in HTML, CSS, and JavaScript, with experience working with modern JavaScript frameworks such as React or Angular.
+                We are seeking Link talented Front-End Developer to join our team in Boston, MA. The ideal candidate will have strong skills in HTML, CSS, and JavaScript, with experience working with modern JavaScript frameworks such as React or Angular.
               </p>
               <h3 className="text-indigo-800 text-lg font-bold mb-2">Salary</h3>
               <p className="mb-4">$70k - $80K / Year</p>
@@ -45,7 +47,7 @@ const JobPage = () => {
               <h3 className="text-xl font-bold mb-6">Company Info</h3>
               <h2 className="text-2xl">NewTek Solutions</h2>
               <p className="my-2">
-                NewTek Solutions is a leading technology company specializing in web development and digital solutions. We pride ourselves on delivering high-quality products and services to our clients while fostering a collaborative and innovative work environment.
+                NewTek Solutions is Link leading technology company specializing in web development and digital solutions. We pride ourselves on delivering high-quality products and services to our clients while fostering Link collaborative and innovative work environment.
               </p>
               <hr className="my-4" />
               <h3 className="text-xl">Contact Email:</h3>
@@ -56,12 +58,12 @@ const JobPage = () => {
 
             <div className="bg-white p-6 rounded-lg shadow-md mt-6">
               <h3 className="text-xl font-bold mb-6">Manage Job</h3>
-              <a
-                href="/add-job.html"
+              <Link
+                to="/add-job"
                 className="bg-indigo-500 hover:bg-indigo-600 text-white text-center font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block"
               >
                 Edit Job
-              </a>
+              </Link>
               <button
                 className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block"
               >
