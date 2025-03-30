@@ -2,6 +2,7 @@ import React from "react";
 import { useParams, useLoaderData, useNavigate } from "react-router-dom";
 import { FaArrowLeft, FaMapMarker } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify"; // we will use this to show toast notifications
 
 const JobPage = ({ deleteJob }) => {
   const navigate = useNavigate(); // we need to use useNavigate to navigate to the jobs page after deleting a job
@@ -13,16 +14,10 @@ const JobPage = ({ deleteJob }) => {
     );
     if (!confirmDelete) return;
 
-    deleteJob(jobId)
-      .then(() => {
-        alert("Job deleted successfully!");
-        navigate("/jobs");
-      })
-      .catch((error) => {
-        console.error("Error deleting job:", error);
-        alert("Failed to delete job. Please try again.");
-      });
-  }
+    deleteJob(jobId);
+    toast.success("Job deleted successfully!"); // show success toast notification
+    navigate("/jobs");
+  };
   return (
     <>
       <section>

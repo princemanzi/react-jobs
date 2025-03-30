@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom"; // we need to use useNavigate to navigate to the jobs page after adding a job
 // in jsx we do not allow to use for attribute, we use htmlFor instead
+import { toast } from "react-toastify";
 const AddJob = ({ addJobSubmit }) => {
   const [title, setTitle] = useState('');
   const [type, setType] = useState('Full-Time'); // we set default value to Full-Time so that it is selected by default if user does not provide any value
@@ -16,7 +17,7 @@ const AddJob = ({ addJobSubmit }) => {
 
 
   const navigate = useNavigate(); // we need to use useNavigate to navigate to the jobs page after adding a job
-  const submitForm = (e) => {
+  const submitForm = async (e) => {
     e.preventDefault();
     const newJob = {
       title,
@@ -31,10 +32,15 @@ const AddJob = ({ addJobSubmit }) => {
         contactPhone,
       },
     };
-    addJobSubmit(newJob);
 
-    return navigate('/jobs'); // we need to use navigate to go back to the jobs page after adding a job
-  }
+    try {
+      await addJobSubmit(newJob);
+      toast.success("Job added successfully!");
+      navigate("/jobs");
+    } catch (error) {
+      toast.error("Failed to add job. Please try again.", error);
+    }
+  };
 
 
   return (
