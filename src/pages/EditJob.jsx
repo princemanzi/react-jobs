@@ -1,5 +1,5 @@
 import React from 'react';
-import {  useLoaderData, useNavigate } from "react-router-dom";
+import { useParams, useLoaderData, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { toast } from "react-toastify";
 
@@ -10,7 +10,7 @@ export const editJobLoader = async ({ params }) => {
   }
   return response.json();
 };
-
+ 
 const EditJob = ({ updateJobSubmit }) => {
       const job = useLoaderData();
 
@@ -23,6 +23,8 @@ const EditJob = ({ updateJobSubmit }) => {
         const [companyDescription, setCompanyDescription] = useState(job.company.description);
         const [contactEmail, setContactEmail] = useState(job.company.contactEmail);
         const [contactPhone, setContactPhone] = useState(job.company.contactPhone);
+
+        const { id } = useParams();
 
 
         const navigate = useNavigate(); 
