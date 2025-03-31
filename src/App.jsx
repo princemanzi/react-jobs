@@ -40,14 +40,17 @@ const App = () => {
 
   // update job
   const updateJob = async (job) => {
-    const res = await fetch(`/api/jobs/${job.id}`, {
+    const response = await fetch(`/api/jobs/${job.id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(job),
     });
-    return;
+    if (!response.ok) {
+      throw new Error("Failed to delete job");
+    }
+    return response.json();
   };
 
   const router = createBrowserRouter(

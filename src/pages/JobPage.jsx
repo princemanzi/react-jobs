@@ -18,6 +18,10 @@ const JobPage = ({ deleteJob }) => {
     toast.success("Job deleted successfully!"); // show success toast notification
     navigate("/jobs");
   };
+
+  // Removed unused nested JobPage component and onUpdateClick function
+
+
   return (
     <>
       <section>
