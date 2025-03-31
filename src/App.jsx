@@ -48,7 +48,7 @@ const App = () => {
       body: JSON.stringify(job),
     });
     if (!response.ok) {
-      throw new Error("Failed to delete job");
+      throw new Error("Failed to update job");
     }
     return response.json();
   };
