@@ -1,4 +1,5 @@
 # React + Vite
+This is a react project for basically CRUD functionality with backend development using a react server and can be deployed but if so no jobs will be displayed therefore you will have to ceate new jobs in order for them to be displayed. 
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
